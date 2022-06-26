@@ -43,7 +43,7 @@ variable "api_management_api_prefix" {
 variable "product" {
   type        = string
   description = "Name of the product"
-  default     = "vmoney"
+  default     = "fnapp"
 }
 
 variable "location" {

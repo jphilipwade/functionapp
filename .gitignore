@@ -102,4 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
-/terraform/test.zip
+/terraform/*.zip
+/.idea/
+/terraform/.terraform.lock.hcl
+/terraform/.terraform.tfstate.lock.info
+
+/terraform/.terraform/
+/terraform/terraform**
+
+
+api/local.settings.json
