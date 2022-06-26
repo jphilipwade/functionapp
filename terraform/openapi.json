@@ -1,0 +1,48 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "fa-vmoney-pw",
+        "description": "Import from fa-vmoney-pw Function App",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "https://fa-vmoney-pw.azurewebsites.net"
+        }
+    ],
+    "paths": {
+        "/api/event": {
+            "post": {
+                "summary": "HttpExample",
+                "operationId": "post-httpexample",
+                "responses": {
+                    "200": {
+                        "description": null
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiKeyHeader": {
+                "type": "apiKey",
+                "name": "Ocp-Apim-Subscription-Key",
+                "in": "header"
+            },
+            "apiKeyQuery": {
+                "type": "apiKey",
+                "name": "subscription-key",
+                "in": "query"
+            }
+        }
+    },
+    "security": [
+        {
+            "apiKeyHeader": []
+        },
+        {
+            "apiKeyQuery": []
+        }
+    ]
+}
