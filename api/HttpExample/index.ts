@@ -8,7 +8,7 @@ const httpTrigger: AzureFunction = async function (
   const name = req.query.name || (req.body && req.body.name);
   const responseMessage = name ? "Hello there, " + name : "Hello";
 
-  context.bindings.outputQueueItem = "q:" + name;
+  context.bindings.outputQueueItem = responseMessage;
 
   context.res = {
     // status: 200, /* Defaults to 200 */
@@ -17,3 +17,4 @@ const httpTrigger: AzureFunction = async function (
 };
 
 export default httpTrigger;
+

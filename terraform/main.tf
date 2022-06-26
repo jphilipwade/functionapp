@@ -12,9 +12,9 @@ provider "azurerm" {
 }
 
 locals {
-  package_path = "test.zip"
+  package_path = "../build/api.zip"
   package_hash = filemd5(local.package_path)
-  openapi_path = "openapi.json"
+  openapi_path = "../swagger/openapi.json"
   openapi_hash = filemd5(local.openapi_path)
 }
 

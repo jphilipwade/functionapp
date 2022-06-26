@@ -110,5 +110,6 @@ dist
 /terraform/.terraform/
 /terraform/terraform**
 
-
 api/local.settings.json
+
+/build/
