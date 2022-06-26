@@ -1,0 +1,12 @@
+﻿{
+  "compressionLevel": 9,
+  "dereferenceLinks": true,
+  "entries": [
+    "tsconfig.json"
+  ],
+  "force": true,
+  "mode": "add",
+  "outputEntry": "api.zip",
+  "quiet": false,
+  "verbose": false
+}
