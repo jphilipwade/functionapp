@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "myQueue",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "saq-queue-vmoney-pw",
+      "connection": "AzureWebJobsStorage"
+    }
+  ],
+  "scriptFile": "../dist/QueueExample/index.js"
+}
