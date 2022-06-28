@@ -57,3 +57,8 @@ variable "api_management_api_prefix" {
   type    = string
   default = "api"
 }
+
+variable "service_bus_namespace_prefix" {
+  type    = string
+  default = "sbns"
+}

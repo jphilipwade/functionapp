@@ -12,10 +12,8 @@ provider "azurerm" {
 }
 
 locals {
-  package_path = "../build/api.zip"
+  package_path = "api.zip"
   package_hash = filemd5(local.package_path)
-  openapi_path = "../swagger/openapi.json"
-  openapi_hash = filemd5(local.openapi_path)
 }
 
 ## resource group
@@ -95,15 +93,6 @@ resource "azurerm_storage_blob" "code" {
   storage_container_name = azurerm_storage_container.deployment_packages.name
   type                   = "Block"
   source                 = local.package_path
-}
-
-## openAPI definitions
-resource "azurerm_storage_blob" "openapi" {
-  name                   = "openapi-${local.openapi_hash}.json"
-  storage_account_name   = azurerm_storage_account.sa.name
-  storage_container_name = azurerm_storage_container.deployment_packages.name
-  type                   = "Block"
-  source                 = local.openapi_path
 }
 
 ## function app

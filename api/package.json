@@ -7,7 +7,7 @@
     "watch": "tsc -w",
     "prestart": "npm run build",
     "start": "func start",
-    "package": "@powershell Compress-Archive -Path HttpExample,QueueExample,dist,*.json -DestinationPath ../build/api.zip -Force",
+    "package": "@powershell Compress-Archive -Path HttpExample,QueueExample,dist,*.json -DestinationPath ../terraform/api.zip -Force",
     "test": "echo \"No tests yet...\""
   },
   "devDependencies": {
