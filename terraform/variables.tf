@@ -1,3 +1,22 @@
+## other
+variable "product" {
+  type        = string
+  description = "Name of the product"
+  default     = "fnapp"
+}
+
+variable "location" {
+  type        = string
+  description = "Region"
+  default     = "uksouth"
+}
+
+variable "environment" {
+  type        = string
+  description = "Environment"
+  default     = "pw"
+}
+
 ## prefixes
 variable "resource_group_prefix" {
   type    = string
@@ -38,24 +57,3 @@ variable "api_management_api_prefix" {
   type    = string
   default = "api"
 }
-
-## other
-variable "product" {
-  type        = string
-  description = "Name of the product"
-  default     = "fnapp"
-}
-
-variable "location" {
-  type        = string
-  description = "Region"
-  default     = "uksouth"
-}
-
-variable "environment" {
-  type        = string
-  description = "Environment"
-  default     = "pw"
-}
-
-

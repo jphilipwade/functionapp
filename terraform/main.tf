@@ -130,6 +130,8 @@ resource "azurerm_function_app" "fa" {
 }
 
 ## api management
+## remove to save money!
+/*
 resource "azurerm_api_management" "apim" {
   location            = azurerm_resource_group.rg.location
   name                = "${var.api_management_prefix}-${var.product}-${var.environment}"
@@ -152,30 +154,4 @@ resource "azurerm_api_management_api" "api" {
     content_value  = format("%s%s", azurerm_storage_blob.openapi.url, data.azurerm_storage_account_sas.sas.sas)
   }
 }
-
-/*
-resource "azurerm_api_management_api_operation" "post" {
-  api_management_name = azurerm_api_management.apim.name
-  api_name            = azurerm_api_management_api.api.name
-  display_name        = "PostEvent"
-  method              = "POST"
-  operation_id        = "post-event"
-  resource_group_name = azurerm_resource_group.rg.name
-  url_template        = "/event"
-  response {
-    status_code = 200
-  }
-}
-
-resource "azurerm_api_management_backend" "example" {
-  api_management_name = azurerm_api_management.apim.name
-  description         = "backend-vmoney-pw"  
-  name                = "backend-vmoney-pw"
-  protocol            = "http"
-  resource_group_name = azurerm_resource_group.rg.name
-  resource_id         = "https://management.azure.com/subscriptions/b6a5d44a-efdc-446f-80f7-8837e93faebc/resourceGroups/rg-vmoney-pw/providers/Microsoft.Web/sites/fa-vmoney-pw" 
-  url                 = azurerm_function_app.fa.default_hostname
-
-}
-
 */
