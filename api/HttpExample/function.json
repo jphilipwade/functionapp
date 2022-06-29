@@ -5,7 +5,9 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["post"],
+      "methods": [
+        "post"
+      ],
       "route": "event"
     },
     {
@@ -19,8 +21,14 @@
       "name": "outputQueueItem",
       "queueName": "saq-queue-vmoney-pw",
       "connection": "AzureWebJobsStorage"
+    },
+    {
+      "name": "outputSbQueue",
+      "type": "serviceBus",
+      "queueName": "unknown",
+      "connection": "AzureServiceBusConnection",
+      "direction": "out"
     }
   ],
   "scriptFile": "../dist/HttpExample/index.js"
 }
-

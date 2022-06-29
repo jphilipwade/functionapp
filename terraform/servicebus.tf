@@ -9,19 +9,26 @@ resource "azurerm_servicebus_namespace" "sbns" {
   }
 }
 
+resource "azurerm_servicebus_queue" "name" {
+  name                = "${var.product}-${var.service_bus_namespace_prefix}-queue-${var.environment}"
+  resource_group_name = azurerm_resource_group.rg.name
+  namespace_name      = azurerm_servicebus_namespace.sbns.name
+  enable_partitioning = true
+}
+
 resource "azurerm_servicebus_topic" "sbtopic" {
-  name         = "${var.product}-${var.service_bus_namespace_prefix}-topic-${var.environment}"
-  namespace_name = azurerm_servicebus_namespace.sbns.name
+  name                = "${var.product}-${var.service_bus_namespace_prefix}-topic-${var.environment}"
+  namespace_name      = azurerm_servicebus_namespace.sbns.name
   resource_group_name = azurerm_resource_group.rg.name
   enable_partitioning = true
 }
 
 
 resource "azurerm_servicebus_subscription" "example" {
-  name               = "${var.product}-${var.service_bus_namespace_prefix}-sub-${var.environment}"
-  namespace_name = azurerm_servicebus_namespace.sbns.name
-  topic_name           = azurerm_servicebus_topic.sbtopic.name
+  name                = "${var.product}-${var.service_bus_namespace_prefix}-sub-${var.environment}"
+  namespace_name      = azurerm_servicebus_namespace.sbns.name
+  topic_name          = azurerm_servicebus_topic.sbtopic.name
   resource_group_name = azurerm_resource_group.rg.name
-  max_delivery_count = 1
+  max_delivery_count  = 1
 }
 
